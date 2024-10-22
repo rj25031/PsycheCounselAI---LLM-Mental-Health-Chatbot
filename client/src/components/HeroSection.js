@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeroSection.css';
+import '../css/HeroSection.css';
 
 const HeroSection = () => {
   return (
@@ -11,7 +11,7 @@ const HeroSection = () => {
         </button>
       </div>
       <div className="hero-image">
-        <img src="/assets/Mental Health.jpg" alt="Mental Health" />
+        <img src='\assets\Mental Health.jpg' alt="Mental Health" />
       </div>
     </section>
   );

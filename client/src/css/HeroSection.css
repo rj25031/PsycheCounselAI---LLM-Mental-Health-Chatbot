@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'MyCustomFont';
-  src: url('D:\Projects\AI Therapy\mental-therapy-website\src\font\chabul\CHABUL.ttf');
+  src: url('../../public/assets/font/chabul/CHABUL.ttf');
 }
 
 .hero {
