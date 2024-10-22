@@ -1,0 +1,18 @@
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f7fa;
+    margin-top: 20px;
+  }
+  
+  .footer p {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .footer .social-links a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #555;
+  }
+  
