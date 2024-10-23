@@ -11,7 +11,7 @@ const HeroSection = () => {
         </button>
       </div>
       <div className="hero-image">
-        <img src='\assets\Mental Health.jpg' alt="Mental Health" />
+      <img src="/assets/images/Mental Health.jpg" alt="Mental Health" />
       </div>
     </section>
   );

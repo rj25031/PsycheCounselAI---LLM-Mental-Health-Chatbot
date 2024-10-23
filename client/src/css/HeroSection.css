@@ -16,14 +16,13 @@
   
   .hero h1 {
     display: flex;
-    font-size: 120px;
+    font-size: 140px;
     margin-bottom: 10px;
     font-family: 'MyCustomFont', sans-serif;
-    text-align: center;
   }
   
   .hero p {
-    font-size: 18px;
+    font-size: 36px;
     color: #555;
     margin-bottom: 20px;
   }
@@ -44,7 +43,7 @@
   }
   
   .hero-image img {
-    max-width: 400px;
+    max-width: 800px;
     border-radius: 20px;
   }
   
