@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'MyCustomFont1';
+    src: url('../../public/assets/font/chabul/CHABUL.ttf');
+  }
+
+  @font-face {
+    font-family: 'MyCustomFont4';
+    src: url('../../public/assets/font/autumn_in_september/Autumn\ in\ September.ttf');
+  }
+  
+.confidence-section {
+    display: flex;
+    height: 90vh;
+    width: 96%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #005836; /* Dark green like in the image */
+    color: #fff;
+  }
+  
+  .confidence-content {
+    flex: 1;
+  }
+  
+  .confidence-content h2 {
+    font-family: 'MyCustomFont1', sans-serif;
+    font-size: 8rem;
+  }
+  
+  .confidence-content p{
+    font-family: 'MyCustomFont4', sans-serif;
+    font-size: 2.5rem;
+  }
+  .confidence-content .highlight {
+    color: #f5a623; /* Golden highlight for 'grow confidence' */
+  }
+  
+  .confidence-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    color: #000;
+  }
+  
+  .card-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-content p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #f5a623;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .card-link:hover {
+    background-color: #e58d00;
+  }
+  

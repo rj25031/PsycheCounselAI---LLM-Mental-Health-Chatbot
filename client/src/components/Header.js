@@ -13,9 +13,9 @@ const Header = () => {
         <div className="logo">PsycheCounsel.AI</div>
         <nav className="nav-links">
           <a href="#">About Us</a>
-          <a href="#">Work With Us</a>
-          <a href="#">Events</a>
           <a href="#">Contact Us</a>
+          <a href="#">Blog</a>
+          <a href="#">FAQs</a>
         </nav>
         <button class="button" onClick={handleOpenModal}>
           <b>Get Started</b>

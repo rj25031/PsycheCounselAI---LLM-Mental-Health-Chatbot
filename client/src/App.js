@@ -3,8 +3,12 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
+import StressCheckSection from './components/StressCheckSection';
+import ConfidenceSection from './components/ConfidenceSection'; // Import new section
+import Questionnaire from './components/Questionnaire';
 import Footer from './components/Footer';
-import RegistrationForm from './components/RegistrationForm'; // Import registration form
+import RegistrationForm from './components/RegistrationForm';
+import ChatInterface from './components/ChatInterface';
 import './index.css';
 
 function App() {
@@ -13,11 +17,19 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          {/* Home page route */}
-          <Route path="/" element={<HeroSection />} />
-          
-          {/* Registration page route */}
+          <Route 
+            path="/" 
+            element={
+              <>
+                <HeroSection />
+                <StressCheckSection />
+                <ConfidenceSection /> {/* Add ConfidenceSection here */}
+              </>
+            } 
+          />
           <Route path="/register" element={<RegistrationForm />} />
+          <Route path="/chat" element={<ChatInterface />} />
+          <Route path="/questionnaire" element={<Questionnaire />} /> {/* New route */}
         </Routes>
         <Footer />
       </div>
