@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'MyCustomFont1';
+    src: url('../../public/assets/font/chabul/CHABUL.ttf');
+  }
+
+  @font-face {
+    font-family: 'MyCustomFont3';
+    src: url('../../public/assets/font/thanks_2/Thanks.ttf');
+  }
+
+  @font-face {
+    font-family: 'MyCustomFont4';
+    src: url('../../public/assets/font/autumn_in_september/Autumn\ in\ September.ttf');
+  }
+
+.questionnaire-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    background-color: #fff15a;
+    min-height: 100vh;
+  }
+  
+h1 {
+    font-size: 100px;
+    font-family: 'MyCustomFont1', sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .question-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 400px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+    /* font-family: 'MyCustomFont3', sans-serif; */
+    /* font-size: 40px; */
+  }
+  
+  p{
+    /* font-size: 40px;
+    font-weight: bold; */
+}
+
+  input[type="number"] {
+    width: 45%;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .back-button, .next-button {
+    background-color: #6fff00;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 30px;
+    display: flex;
+    color: #000000;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover, .next-button:hover {
+    background-color: #419600;
+  }
+  

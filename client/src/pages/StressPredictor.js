@@ -1,145 +1,114 @@
-// src/StressPredictor.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import { FiArrowRight, FiArrowLeft } from 'react-icons/fi'; 
+import '../css/Questionnaire.css'; 
+import Layout from '../components/Layout';
+
+const questions = [
+  { id: 1, question: "What is your current snoring rate?", key: 'snoring_rate' },
+  { id: 2, question: "What is your current respiration rate?", key: 'respiratory_rate' },
+  { id: 3, question: "What is your current body temperature?", key: 'body_temperature' },
+  { id: 4, question: "What would you rate for your limb movement?", key: 'limb_movement' },
+  { id: 5, question: "What is your current blood oxygen level?", key: 'blood_oxegen_level' },
+  { id: 6, question: "What would you rate for your eye movement?", key: 'eye_movement' },
+  { id: 7, question: "What are your current sleeping hours?", key: 'sleep_quality' },
+  { id: 8, question: "What is your current heart rate?", key: 'heart_rate' }
+];
 
 const StressPredictor = () => {
-    const [heartRate, setHeartRate] = useState('');
-    const [skinConductance, setSkinConductance] = useState('');
-    const [respiratoryRate, setRespiratoryRate] = useState('');
-    const [sleepQuality, setSleepQuality] = useState('');
-    const [feature5, setFeature5] = useState('');
-    const [feature6, setFeature6] = useState('');
-    const [feature7, setFeature7] = useState('');
-    const [feature8, setFeature8] = useState('');
-    const [stressLevel, setStressLevel] = useState(null);
-    const [error, setError] = useState('');
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [responses, setResponses] = useState(Array(questions.length).fill(''));
+  const [stressLevel, setStressLevel] = useState(null);
+  const [error, setError] = useState('');
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setError(''); // Clear any previous errors
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    
+    if (value === '' || (Number(value) >= 0 && Number(value) <= 100)) {
+      setError('');
+      const updatedResponses = [...responses];
+      updatedResponses[currentQuestionIndex] = value;
+      setResponses(updatedResponses);
+    } else {
+      setError('Please enter a number between 0 and 100');
+    }
+  };
 
-        const userData = {
-            heart_rate: parseFloat(heartRate),
-            skin_conductance: parseFloat(skinConductance),
-            respiratory_rate: parseFloat(respiratoryRate),
-            sleep_quality: parseFloat(sleepQuality),
-            feature_5: parseFloat(feature5),  // Additional feature
-            feature_6: parseFloat(feature6),  // Additional feature
-            feature_7: parseFloat(feature7),  // Additional feature
-            feature_8: parseFloat(feature8)   // Additional feature
-        };
+  const handleNext = () => {
+    if (responses[currentQuestionIndex] === '') {
+      setError('This field cannot be empty');
+    } else {
+      setError('');
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
+  };
 
-        try {
-            const response = await axios.post('http://localhost:5000/predict', userData);
-            setStressLevel(response.data.stress_level);
-        } catch (err) {
-            setError('Error predicting stress level. Please try again.');
-        }
-    };
+  const handleBack = () => {
+    setError('');
+    setCurrentQuestionIndex(currentQuestionIndex - 1);
+  };
 
-    return (
-        <div style={{ maxWidth: '500px', margin: 'auto', textAlign: 'center' }}>
-            <h1>Stress Level Predictor</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>
-                        Heart Rate:
-                        <input
-                            type="number"
-                            value={heartRate}
-                            onChange={(e) => setHeartRate(e.target.value)}
-                            required
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Skin Conductance:
-                        <input
-                            type="number"
-                            value={skinConductance}
-                            onChange={(e) => setSkinConductance(e.target.value)}
-                            required
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Respiratory Rate:
-                        <input
-                            type="number"
-                            value={respiratoryRate}
-                            onChange={(e) => setRespiratoryRate(e.target.value)}
-                            required
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Sleep Quality (1-5):
-                        <input
-                            type="number"
-                            value={sleepQuality}
-                            onChange={(e) => setSleepQuality(e.target.value)}
-                            required
-                            min="1"
-                            max="5"
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Feature 5:
-                        <input
-                            type="number"
-                            value={feature5}
-                            onChange={(e) => setFeature5(e.target.value)}
-                            required
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Feature 6:
-                        <input
-                            type="number"
-                            value={feature6}
-                            onChange={(e) => setFeature6(e.target.value)}
-                            required
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Feature 7:
-                        <input
-                            type="number"
-                            value={feature7}
-                            onChange={(e) => setFeature7(e.target.value)}
-                            required
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Feature 8:
-                        <input
-                            type="number"
-                            value={feature8}
-                            onChange={(e) => setFeature8(e.target.value)}
-                            required
-                        />
-                    </label>
-                </div>
-                <button type="submit">Predict Stress Level</button>
-            </form>
-            {stressLevel !== null && (
-                <h2>Predicted Stress Level: {stressLevel}</h2>
-            )}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-        </div>
-    );
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const userData = questions.reduce((acc, question, index) => {
+      acc[question.key] = parseFloat(responses[index]);
+      return acc;
+    }, {});
+
+    try {
+      const response = await axios.post('http://localhost:5000/predict', userData);
+      setStressLevel(response.data.stress_level);
+    } catch (err) {
+      setError('Error predicting stress level. Please try again.');
+    }
+  };
+
+  const isLastQuestion = currentQuestionIndex === questions.length - 1;
+  const isFirstQuestion = currentQuestionIndex === 0;
+
+  return (
+    <Layout>
+    <div className="questionnaire-container">
+      <h1>Answer this simple questions →</h1>
+      <div className="question-box">
+        <h2>QUESTION {currentQuestionIndex + 1}/{questions.length}:</h2>
+        <p>{questions[currentQuestionIndex].question}</p>
+
+        <input
+          type="number"
+          min="0"
+          max="100"
+          value={responses[currentQuestionIndex]}
+          onChange={handleInputChange}
+          placeholder="Enter a value between 0-100"
+        />
+
+        {error && <p className="error">{error}</p>}
+      </div>
+
+      <div className="button-group">
+        {!isFirstQuestion && (
+          <button className="back-button" onClick={handleBack}>
+            <FiArrowLeft /> Back
+          </button>
+        )}
+
+        <button
+          className="next-button"
+          onClick={isLastQuestion ? handleSubmit : handleNext}
+        >
+          {isLastQuestion ? 'Submit' : 'Next'} <FiArrowRight />
+        </button>
+      </div>
+
+      {stressLevel !== null && (
+        <h2>Predicted Stress Level: {stressLevel}</h2>
+      )}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
+    </Layout>
+  );
 };
 
 export default StressPredictor;
- 

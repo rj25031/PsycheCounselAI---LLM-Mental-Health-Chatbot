@@ -13,14 +13,14 @@ def predict():
     data = request.json
 
     features = np.array([
-        data['heart_rate'],      
-        data['skin_conductance'],
-        data['respiratory_rate'],  
+        data['snoring_rate'],      
+        data['respiratory_rate'],
+        data['body_temperature'],  
         data['sleep_quality'] ,
-         data['feature_5'],  # Additional feature
-        data['feature_6'],  # Additional feature
-        data['feature_7'],  # Additional feature
-        data['feature_8']     
+         data['limb_movement'],  
+        data['blood_oxegen_level'],  
+        data['eye_movement'], 
+        data['heart_rate']     
     ]).reshape(1, -1)
 
     prediction = model.predict(features)

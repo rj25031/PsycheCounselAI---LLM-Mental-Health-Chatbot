@@ -38,7 +38,7 @@ const LoginForm = ({ onClose }) => {
 
   return (
     <div className="modal-overlay">
-      <div className="modal-content">
+      <div className="modal-content login-modal">
         <button className="close-icon" onClick={onClose}>
           &times;
         </button>
@@ -46,7 +46,7 @@ const LoginForm = ({ onClose }) => {
         <form onSubmit={handleLogin}>
           <input
             type="text"
-            placeholder="Patient ID"
+            placeholder="Email ID"
             value={patientID}
             onChange={(e) => setPatientID(e.target.value)}
             required

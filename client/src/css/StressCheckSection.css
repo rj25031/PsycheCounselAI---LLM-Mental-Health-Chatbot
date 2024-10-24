@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'MyCustomFont2';
+    src: url('../../public/assets/font/the_bigmouth/TheBigmouth.ttf');
+  }
+
+.stress-check-container {
+    display: flex;
+    height: 80vh;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    background-color: #e8f4fa;
+    border-radius: 20px;
+    margin: 20px auto;
+  }
+  
+  .stress-image img {
+    width: 600px;
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  .stress-info {
+    text-align: left;
+    max-width: 500px;
+  }
+  
+  .stress-info h1 {
+    font-size: 90px;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'MyCustomFont2', sans-serif;
+  }
+  
+  .stress-info p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .check-button {
+    background-color: #ffea00;
+    border: none;
+    padding: 20px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .check-button:hover {
+    background-color: #ffd700;
+  }
+  
