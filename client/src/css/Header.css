@@ -17,11 +17,68 @@
     color: #333;
   }
   
-  .cta-button {
-    background-color: #ffbf00;
+  .button {
+    position: relative;
+    background-color: #ffea00;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    font-size: 16px;
+    color: #000000;
+    padding: 20px;
+    width: 130px;
+    border-radius: 30px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
     cursor: pointer;
   }
   
+  .button:after {
+    content: "";
+    background: #ffffff;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+  .button:hover{
+    padding-left: 5px;
+  }
+
+  a {
+    font-weight: bold;
+    background:
+      linear-gradient(
+        to right,
+        rgb(255, 255, 255),
+        rgb(255, 255, 255)
+      ),
+      linear-gradient(
+        to right,
+        rgba(255, 0, 0, 1),
+        rgba(255, 0, 180, 1),
+        rgba(0, 100, 200, 1)
+    );
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0% 100%;
+    background-repeat: no-repeat;
+    
+    transition: background-size 400ms;
+  }
+  
+  a:hover {
+    background-size: 0 3px, 100% 3px;
+  }
