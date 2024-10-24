@@ -2,12 +2,12 @@ import mongoose from 'mongoose';
 
 const userSchema = mongoose.Schema(
 {
-    Fname : String,
-    Lname : String,
-    email:String,
-    mobile:Number,
-    password:String,
-    newsletter:Boolean
+    name : String,
+    email: String,
+    phone: Number,
+    password: String,
+    age: Number,
+    address: String
 },
 {
     collection:'userModel'

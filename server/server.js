@@ -14,11 +14,11 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
   });
 //routes
-import itemRoute from './routes/itemRoute.js';
-import userRoute from './routes/userRoute.js'
+import userRoute from './routes/userRout.js';
+// import userRoute from './routes/userRoute.js'
 
 
-app.use('/api/product',itemRoute);
+// app.use('/api/product',itemRoute);
 app.use('/api/user',userRoute)
 
 
