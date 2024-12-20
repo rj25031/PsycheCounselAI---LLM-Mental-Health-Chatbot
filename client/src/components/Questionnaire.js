@@ -5,9 +5,14 @@ import { FiArrowRight, FiArrowLeft } from 'react-icons/fi'; // Arrow icons
 
 const questions = [
   { id: 1, question: "What is your current snoring rate?" },
-  { id: 2, question: "How often do you feel fatigued?" },
-  { id: 3, question: "How stressed do you feel daily?" },
-  // Add more questions as needed
+  { id: 2, question: "What is your current respiration rate?" },
+  { id: 3, question: "What is your current body temperature?" },
+  { id: 4, question: "What would you rate for your limb movement?" },
+  { id: 5, question: "What is your current blood oxygen level?" },
+  { id: 6, question: "What would you rate for your eye movement?" },
+  { id: 7, question: "What are your current sleeping hour?" },
+  { id: 8, question: "What are your current heart rate?" },
+  
 ];
 
 const Questionnaire = () => {
