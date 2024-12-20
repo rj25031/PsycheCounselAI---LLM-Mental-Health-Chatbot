@@ -25,7 +25,7 @@
   
   .confidence-content h2 {
     font-family: 'MyCustomFont1', sans-serif;
-    font-size: 8rem;
+    font-size: 5rem;
   }
   
   .confidence-content p{
@@ -33,7 +33,7 @@
     font-size: 2.5rem;
   }
   .confidence-content .highlight {
-    color: #f5a623; /* Golden highlight for 'grow confidence' */
+    color: #f5a623; 
   }
   
   .confidence-card {
@@ -47,12 +47,12 @@
   }
   
   .card-image {
-    width: 100%;
+    width: 50%;
     border-radius: 10px;
   }
   
   .card-content h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
   }
   

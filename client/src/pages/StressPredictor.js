@@ -1,27 +1,29 @@
-// src/components/Questionnaire.js
 import React, { useState } from 'react';
-import '../css/Questionnaire.css'; // Add CSS here
-import { FiArrowRight, FiArrowLeft } from 'react-icons/fi'; // Arrow icons
+import axios from 'axios';
+import { FiArrowRight, FiArrowLeft } from 'react-icons/fi'; 
+import '../css/Questionnaire.css'; 
+import Layout from '../components/Layout';
 
 const questions = [
-  { id: 1, question: "What is your current snoring rate?" },
-  { id: 2, question: "What is your current respiration rate?" },
-  { id: 3, question: "What is your current body temperature?" },
-  { id: 4, question: "What would you rate for your limb movement?" },
-  { id: 5, question: "What is your current blood oxygen level?" },
-  { id: 6, question: "What would you rate for your eye movement?" },
-  { id: 7, question: "What are your current sleeping hour?" },
-  { id: 8, question: "What are your current heart rate?" },
-  
+  { id: 1, question: "What is your current snoring rate?", key: 'snoring_rate' },
+  { id: 2, question: "What is your current respiration rate?", key: 'respiratory_rate' },
+  { id: 3, question: "What is your current body temperature?", key: 'body_temperature' },
+  { id: 4, question: "What would you rate for your limb movement?", key: 'limb_movement' },
+  { id: 5, question: "What is your current blood oxygen level?", key: 'blood_oxegen_level' },
+  { id: 6, question: "What would you rate for your eye movement?", key: 'eye_movement' },
+  { id: 7, question: "What are your current sleeping hours?", key: 'sleep_quality' },
+  { id: 8, question: "What is your current heart rate?", key: 'heart_rate' }
 ];
 
-const Questionnaire = () => {
+const StressPredictor = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [responses, setResponses] = useState(Array(questions.length).fill(''));
+  const [stressLevel, setStressLevel] = useState(null);
   const [error, setError] = useState('');
 
   const handleInputChange = (e) => {
     const value = e.target.value;
+    
     if (value === '' || (Number(value) >= 0 && Number(value) <= 100)) {
       setError('');
       const updatedResponses = [...responses];
@@ -46,15 +48,27 @@ const Questionnaire = () => {
     setCurrentQuestionIndex(currentQuestionIndex - 1);
   };
 
-  const handleSubmit = () => {
-    console.log('Submitted Responses:', responses);
-    // Add submission logic here (e.g., send to backend or display results)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const userData = questions.reduce((acc, question, index) => {
+      acc[question.key] = parseFloat(responses[index]);
+      return acc;
+    }, {});
+
+    try {
+      const response = await axios.post('http://localhost:5000/predict', userData);
+      setStressLevel(response.data.stress_level);
+    } catch (err) {
+      setError('Error predicting stress level. Please try again.');
+    }
   };
 
   const isLastQuestion = currentQuestionIndex === questions.length - 1;
   const isFirstQuestion = currentQuestionIndex === 0;
 
   return (
+    <Layout>
     <div className="questionnaire-container">
       <h1>Answer this simple questions →</h1>
       <div className="question-box">
@@ -87,8 +101,14 @@ const Questionnaire = () => {
           {isLastQuestion ? 'Submit' : 'Next'} <FiArrowRight />
         </button>
       </div>
+
+      {stressLevel !== null && (
+        <h2>Predicted Stress Level: {stressLevel}</h2>
+      )}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
+    </Layout>
   );
 };
 
-export default Questionnaire;
+export default StressPredictor;

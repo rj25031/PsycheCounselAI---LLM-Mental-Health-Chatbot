@@ -1,9 +1,9 @@
-// src/components/ChatInterface.js
 import React, { useState } from 'react';
-import { FiSend } from 'react-icons/fi';  // Send icon
-import { FaMicrophone } from 'react-icons/fa';  // Mic icon
+import { FiSend } from 'react-icons/fi'; 
+import { FaMicrophone } from 'react-icons/fa';  
 import '../css/ChatInterface.css';
-
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 const ChatInterface = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
@@ -14,16 +14,17 @@ const ChatInterface = () => {
       const newMessage = { type: 'user', text: input };
       setMessages([...messages, newMessage]);
       setInput('');
-      // Handle response logic here (e.g., from backend/AI model)
     }
   };
 
   const toggleRecording = () => {
     setIsRecording(!isRecording);
-    // Add logic for voice input handling
   };
 
   return (
+    <>
+  <Header/>
+
     <div className="chat-container">
       <div className="chat-dialogue">
         {messages.map((msg, index) => (
@@ -49,6 +50,9 @@ const ChatInterface = () => {
         </button>
       </div>
     </div>
+
+    <Footer></Footer>
+    </>
   );
 };
 

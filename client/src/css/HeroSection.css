@@ -4,9 +4,6 @@
 }
 
 .hero {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px;
   background-color: #eaf3ff;
 }
 
@@ -15,14 +12,11 @@
 }
 
 .hero h1 {
-  display: flex;
-  font-size: 140px;
-  margin-bottom: 10px;
   font-family: 'MyCustomFont1', sans-serif;
 }
 
 .hero p {
-  font-size: 36px;
+
   color: #555;
   margin-bottom: 20px;
 }
@@ -31,6 +25,7 @@
   background-color: #ffee33;
   color: rgb(0, 0, 0);
   border: none;
+  width: 24%;
   font-size: 16px;
   padding: 20px 20px;
   display: flex;
@@ -52,6 +47,6 @@
 }
 
 .hero-image img {
-  max-width: 800px;
+  max-width: 600px;
   border-radius: 20px;
 }
