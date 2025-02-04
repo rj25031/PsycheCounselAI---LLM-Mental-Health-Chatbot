@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RegistrationForm from './auth/RegistrationForm'; 
 import LoginForm from './auth/LoginForm';
-import StressPredictor from './pages/StressPredictor';
+import StressQuestions from './pages/StressQuestions';
 import Home from './pages/Home';
 import ChatInterface from './pages/ChatInterface';
 
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           {/* page route */}
           <Route path="/" element={<Home />} />
-          <Route path="/stress" element={<StressPredictor />} />
+          <Route path="/stress" element={<StressQuestions/>} />
           <Route path="/chat" element={<ChatInterface />} />
           
           {/* Registration route */}
