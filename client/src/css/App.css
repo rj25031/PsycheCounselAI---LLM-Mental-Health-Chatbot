@@ -43,3 +43,16 @@
   .animate-slide:hover {
     animation-play-state: paused;
   }
+
+  /* Add this to your CSS file */
+.transition-transform {
+  transition-property: transform;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
+.ease-out {
+  transition-timing-function: ease-out;
+}

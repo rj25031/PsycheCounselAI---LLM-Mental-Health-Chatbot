@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 import Layout from "../components/Layout";
 import h1Img from "../images/Mental Health 1.jpg";
 import h2Img from "../images/Mental Health 2.jpg";
@@ -11,6 +12,19 @@ import TestimonialsImage4 from "../images/profile4.jpg";
 import TestimonialsImage5 from "../images/profile6.jpg";
 import TestimonialsImage6 from "../images/profile3.jpg";
 import StressQuestions from "./StressQuestions";
+import leftCloud from "../images/left-cloud.png";
+import rightCloud from "../images/right-cloud.png";
+import boy from "../images/boy.png";
+
+// Import FontAwesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSmile,
+  faShieldAlt,
+  faHandsHelping,
+  faEye,
+  faHeartbeat,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   const [showChecker, setShowChecker] = useState(false);
@@ -23,6 +37,11 @@ function Home() {
   const handleChatRedirect = () => {
     navigate("/chat"); // Redirects to ChatInterface.js page
   };
+
+  const [cloudSectionRef, cloudSectionInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
 
   return (
     <Layout>
@@ -121,144 +140,339 @@ function Home() {
             </div>
           </section>
 
-          {/* Testimonials Section */}
-<section className="bg-gray-100 min-h-screen py-32 overflow-hidden">
-  <div className="container mx-auto px-4 h-full flex flex-col justify-center">
-    <h2 className="text-5xl font-bold text-center text-gray-800 mb-8">
-      Testimonials
-    </h2>
+          <section className="bg-gray-100 min-h-[50vh] py-16 overflow-hidden">
+            {" "}
+            {/* Adjusted height */}
+            <div className="container mx-auto px-4 h-full flex flex-col justify-center">
+              <h2 className="text-5xl font-bold text-center text-gray-800 mb-8">
+                Testimonials
+              </h2>
 
-    {/* Testimonials Slider */}
-    <div className="relative w-full overflow-hidden ">
-      <div className="flex space-x-6 animate-slide">
-        {/* Testimonial Card 1 */}
-        <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
-          <img
-            src={TestimonialsImage1}
-            alt="Testimonial"
-            className="w-full h-48 object-cover rounded-t-lg"
-          />
-          <p className="text-gray-600 mt-4 italic">
-            "This AI chatbot is a game-changer in mental health support!"
-          </p>
-          <div className="mt-4">
-            <p className="font-semibold text-gray-800">
-              Dr. D. P. Chaudhari
-            </p>
-            <p className="text-sm text-gray-500">
-              Psychiatrist, AIIMS
-            </p>
-          </div>
-        </div>
+              {/* Testimonials Slider */}
+              <div className="relative w-full overflow-hidden">
+                <div className="flex space-x-6 animate-slide">
+                  {/* Testimonial Card 1 */}
+                  <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
+                    <img
+                      src={TestimonialsImage1}
+                      alt="Testimonial"
+                      className="w-full h-48 object-cover rounded-t-lg"
+                    />
+                    <p className="text-gray-600 mt-4 italic">
+                      "This AI chatbot is a game-changer in mental health
+                      support!"
+                    </p>
+                    <div className="mt-4">
+                      <p className="font-semibold text-gray-800">
+                        Dr. D. P. Chaudhari
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Psychiatrist, AIIMS
+                      </p>
+                    </div>
+                  </div>
 
-        {/* Testimonial Card 2 */}
-        <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
-          <img
-            src={TestimonialsImage2}
-            alt="Testimonial"
-            className="w-full h-48 object-cover rounded-t-lg"
-          />
-          <p className="text-gray-600 mt-4 italic">
-            "An excellent tool for mental well-being and emotional support."
-          </p>
-          <div className="mt-4">
-            <p className="font-semibold text-gray-800">
-              Dr. S. D. Chaudhari
-            </p>
-            <p className="text-sm text-gray-500">
-              Clinical Psychologist, Apollo Hospitals
-            </p>
-          </div>
-        </div>
+                  {/* Testimonial Card 2 */}
+                  <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
+                    <img
+                      src={TestimonialsImage2}
+                      alt="Testimonial"
+                      className="w-full h-48 object-cover rounded-t-lg"
+                    />
+                    <p className="text-gray-600 mt-4 italic">
+                      "An excellent tool for mental well-being and emotional
+                      support."
+                    </p>
+                    <div className="mt-4">
+                      <p className="font-semibold text-gray-800">
+                        Dr. S. D. Patil
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Clinical Psychologist, Apollo Hospitals
+                      </p>
+                    </div>
+                  </div>
 
-        {/* Testimonial Card 3 */}
-        <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
-          <img
-            src={TestimonialsImage3}
-            alt="Testimonial"
-            className="w-full h-48 object-cover rounded-t-lg"
-          />
-          <p className="text-gray-600 mt-4 italic">
-            "AI-powered therapy is the future! This chatbot helps bridge the gap
-            between patients and therapists by providing instant support."
-          </p>
-          <div className="mt-4">
-            <p className="font-semibold text-gray-800">
-              Dr. Durgesh Dalvi
-            </p>
-            <p className="text-sm text-gray-500">
-              Neurologist, Fortis Hospital
-            </p>
-          </div>
-        </div>
+                  {/* Testimonial Card 3 */}
+                  <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
+                    <img
+                      src={TestimonialsImage3}
+                      alt="Testimonial"
+                      className="w-full h-48 object-cover rounded-t-lg"
+                    />
+                    <p className="text-gray-600 mt-4 italic">
+                      "AI-powered therapy is the future! This chatbot helps
+                      bridge the gap between patients and therapists by
+                      providing instant support."
+                    </p>
+                    <div className="mt-4">
+                      <p className="font-semibold text-gray-800">
+                        Dr. Ravi Shashtri
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Neurologist, Fortis Hospital
+                      </p>
+                    </div>
+                  </div>
 
-        {/* Duplicate Cards for Infinite Loop */}
-        {/* Testimonial Card 1 (Duplicate) */}
-        <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
-          <img
-            src={TestimonialsImage4}
-            alt="Testimonial"
-            className="w-full h-48 object-cover rounded-t-lg"
-          />
-          <p className="text-gray-600 mt-4 italic">
-            "I've seen remarkable improvements in patients using this AI chatbot
-            for guided meditation and cognitive behavioral therapy (CBT)."
-          </p>
-          <div className="mt-4">
-            <p className="font-semibold text-gray-800">
-              Dr. Shruti Parave
-            </p>
-            <p className="text-sm text-gray-500">
-              Mental Health Counselor, Manipal Hospital
-            </p>
-          </div>
-        </div>
+                  {/* Duplicate Cards for Infinite Loop */}
+                  {/* Testimonial Card 1 (Duplicate) */}
+                  <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
+                    <img
+                      src={TestimonialsImage4}
+                      alt="Testimonial"
+                      className="w-full h-48 object-cover rounded-t-lg"
+                    />
+                    <p className="text-gray-600 mt-4 italic">
+                      "I've seen remarkable improvements in patients using this
+                      AI chatbot for guided meditation and cognitive behavioral
+                      therapy (CBT)."
+                    </p>
+                    <div className="mt-4">
+                      <p className="font-semibold text-gray-800">
+                        Dr. Prakash Parave
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Mental Health Counselor, Manipal Hospital
+                      </p>
+                    </div>
+                  </div>
 
-        {/* Testimonial Card 2 (Duplicate) */}
-        <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
-          <img
-            src={TestimonialsImage5}
-            alt="Testimonial"
-            className="w-full h-48 object-cover rounded-t-lg"
-          />
-          <p className="text-gray-600 mt-4 italic">
-            "AI-based mental health assistants provide a stigma-free space for
-            people to talk. This chatbot has helped my patients manage stress."
-          </p>
-          <div className="mt-4">
-            <p className="font-semibold text-gray-800">
-              Dr. King Kong
-            </p>
-            <p className="text-sm text-gray-500">
-              Psychotherapist, NIMHANS
-            </p>
-          </div>
-        </div>
+                  {/* Testimonial Card 2 (Duplicate) */}
+                  <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
+                    <img
+                      src={TestimonialsImage5}
+                      alt="Testimonial"
+                      className="w-full h-48 object-cover rounded-t-lg"
+                    />
+                    <p className="text-gray-600 mt-4 italic">
+                      "AI-based mental health assistants provide a stigma-free
+                      space for people to talk. This chatbot has helped my
+                      patients manage stress."
+                    </p>
+                    <div className="mt-4">
+                      <p className="font-semibold text-gray-800">
+                        Dr. Gaurav Kadam
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Psychotherapist, NIMHANS
+                      </p>
+                    </div>
+                  </div>
 
-        {/* Testimonial Card 3 (Duplicate) */}
-        <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
-          <img
-            src={TestimonialsImage6}
-            alt="Testimonial"
-            className="w-full h-48 object-cover rounded-t-lg"
-          />
-          <p className="text-gray-600 mt-4 italic">
-            "This AI chatbot is a revolutionary step in mental healthcare. It
-            offers immediate emotional support, helping patients feel heard."
-          </p>
-          <div className="mt-4">
-            <p className="font-semibold text-gray-800">
-              Dr. Kavita Rao
-            </p>
-            <p className="text-sm text-gray-500">
-              Psychiatrist, Max Healthcare
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                  {/* Testimonial Card 3 (Duplicate) */}
+                  <div className="bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-80">
+                    <img
+                      src={TestimonialsImage6}
+                      alt="Testimonial"
+                      className="w-full h-48 object-cover rounded-t-lg"
+                    />
+                    <p className="text-gray-600 mt-4 italic">
+                      "This AI chatbot is a revolutionary step in mental
+                      healthcare. It offers immediate emotional support, helping
+                      patients feel heard."
+                    </p>
+                    <div className="mt-4">
+                      <p className="font-semibold text-gray-800">
+                        Dr. Kavita Rao
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Psychiatrist, Max Healthcare
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Benefits of Mental Health Therapy Section */}
+          <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto text-center">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-12">
+                Unlock Your Potential:
+                <br />
+                <span className="text-blue-600">
+                  The Life-Changing Benefits
+                </span>
+                <br />
+                of Mental Health Therapy
+              </h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Benefit 1 */}
+                <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+                  <FontAwesomeIcon
+                    icon={faSmile}
+                    className="text-blue-600 text-4xl mb-4"
+                  />
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Reduces Stress & Anxiety
+                  </h3>
+                  <p className="text-gray-700">
+                    Therapy provides tools to manage stress and calm your mind.
+                  </p>
+                </div>
+
+                {/* Benefit 2 */}
+                <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+                  <FontAwesomeIcon
+                    icon={faShieldAlt}
+                    className="text-blue-600 text-4xl mb-4"
+                  />
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Improves Emotional Resilience
+                  </h3>
+                  <p className="text-gray-700">
+                    Build strength to handle life’s challenges with confidence.
+                  </p>
+                </div>
+
+                {/* Benefit 3 */}
+                <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+                  <FontAwesomeIcon
+                    icon={faHandsHelping}
+                    className="text-blue-600 text-4xl mb-4"
+                  />
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Enhances Relationships
+                  </h3>
+                  <p className="text-gray-700">
+                    Learn better communication and emotional understanding.
+                  </p>
+                </div>
+
+                {/* Benefit 4 */}
+                <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+                  <FontAwesomeIcon
+                    icon={faEye}
+                    className="text-blue-600 text-4xl mb-4"
+                  />
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Boosts Self-Awareness
+                  </h3>
+                  <p className="text-gray-700">
+                    Gain insight into your thoughts, feelings, and behaviors.
+                  </p>
+                </div>
+
+                {/* Benefit 5 */}
+                <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+                  <FontAwesomeIcon
+                    icon={faHeartbeat}
+                    className="text-blue-600 text-4xl mb-4"
+                  />
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Promotes Overall Well-Being
+                  </h3>
+                  <p className="text-gray-700">
+                    Improves sleep, focus, and overall mental and physical
+                    health.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto text-center">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-12">
+                How It Works
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Step 1 */}
+                <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+                  <span className="text-4xl font-bold text-blue-600 mb-4">
+                    1
+                  </span>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Start a Conversation
+                  </h3>
+                  <p className="text-gray-700">
+                    Begin by chatting with our AI therapist.
+                  </p>
+                </div>
+                {/* Step 2 */}
+                <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+                  <span className="text-4xl font-bold text-blue-600 mb-4">
+                    2
+                  </span>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Share Your Thoughts
+                  </h3>
+                  <p className="text-gray-700">
+                    Open up about your feelings and concerns.
+                  </p>
+                </div>
+                {/* Step 3 */}
+                <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+                  <span className="text-4xl font-bold text-blue-600 mb-4">
+                    3
+                  </span>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Get Personalized Advice
+                  </h3>
+                  <p className="text-gray-700">
+                    Receive tailored coping strategies and insights.
+                  </p>
+                </div>
+                {/* Step 4 */}
+                <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+                  <span className="text-4xl font-bold text-blue-600 mb-4">
+                    4
+                  </span>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Track Your Progress
+                  </h3>
+                  <p className="text-gray-700">
+                    Monitor your mental health journey over time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="bg-gray-100 py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto text-center">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-12">
+                Features
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Feature 1 */}
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <span className="text-4xl font-bold text-blue-600 mb-4">
+                    🕒
+                  </span>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    24/7 Availability
+                  </h3>
+                  <p className="text-gray-700">
+                    Access support anytime, anywhere.
+                  </p>
+                </div>
+                {/* Feature 2 */}
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <span className="text-4xl font-bold text-blue-600 mb-4">
+                    🔒
+                  </span>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Confidential & Secure
+                  </h3>
+                  <p className="text-gray-700">Your data is safe with us.</p>
+                </div>
+                {/* Feature 3 */}
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <span className="text-4xl font-bold text-blue-600 mb-4">
+                    🎯
+                  </span>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                    Personalized Therapy
+                  </h3>
+                  <p className="text-gray-700">
+                    Tailored advice for your unique needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
         </>
       )}
     </Layout>
