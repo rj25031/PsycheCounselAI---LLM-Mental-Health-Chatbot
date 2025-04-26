@@ -8,10 +8,8 @@ export default function Footer() {
           <div className="flex justify-center">
             <div className="bg-[#FFF9C4] rounded-full p-4">
               <img
-                src="/earkick-panda.png" // Replace with actual path to the panda image
+                src="/src/assets/footer.png" // Replace with actual path to the panda image
                 alt="Simba-da-Lion"
-                width={100}
-                height={100}
               />
             </div>
           </div>

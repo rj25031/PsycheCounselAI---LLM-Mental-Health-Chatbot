@@ -8,37 +8,37 @@ import ReactLenis from 'lenis/react';
 
 const dataPoints = [
     {
-      emoji: "📣",
+      emoji: "/src/assets/Megaphone.svg",
       bg: "bg-yellow-100",
       text: "Audio, video and text memo's and typing behavior when users describe their day, their mood and anxiety levels.",
     },
     {
-      emoji: "👨‍👩‍👧‍👦",
+      emoji: "/src/assets/Friends.svg",
       bg: "bg-green-100",
       text: "Context information such as work, friends, exercise that led to how users are feeling.",
     },
     {
-      emoji: "🏆",
+      emoji: "/src/assets/Trophy.svg",
       bg: "bg-cyan-100",
       text: "Tasks performed by the user which go toward achieving their goals (e.g. sleeping more than 7 hrs).",
     },
     {
-      emoji: "📝",
+      emoji: "/src/assets/Clipboard.svg",
       bg: "bg-indigo-100",
       text: "Symptoms that are of clinical use in diagnosis of mental health issues. For example a user may record a symptom like “Nervousness” or “Constantly worrying” which correspond to clinical assessment questions in forms like Generalized Anxiety Disorder 7.",
     },
     {
-      emoji: "😴",
+      emoji: "/src/assets/Sleepy.svg",
       bg: "bg-green-100",
       text: "Sleep duration",
     },
     {
-      emoji: "🌹",
+      emoji: "/src/assets/Rose.svg",
       bg: "bg-red-100",
       text: "Menstrual cycle",
     },
     {
-      emoji: "🤸",
+      emoji: "/src/assets/Swimming.svg",
       bg: "bg-indigo-100",
       text: "Exercises",
     },
@@ -112,7 +112,7 @@ export default function Technology() {
         <ReactLenis root>
           <Navbar/>
           <section className="bg-[#FFFDF4] pt-40 px-4 md:px-12">
-              <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+              <div className="max-w-7xl grid md:grid-cols-2 gap-12 items-center">
                   {/* Left Content */}
                   <div>
                   <h2 className="text-7xl font-semibold text-black mb-4">
@@ -131,8 +131,8 @@ export default function Technology() {
                   </div>
 
                   {/* Right Side is a Full Image */}
-                  <div className="flex justify-center">
-                      <img src="" alt="Model Image" srcset="" />
+                  <div className="flex justify-center ml-30">
+                      <img src="/src/assets/collab.png" alt="Model Image" srcset="" className="rounded-3xl"/>
                   </div>
               </div>
           </section>
@@ -150,7 +150,7 @@ export default function Technology() {
                       <div
                           className={`size-24 flex items-center justify-center text-4xl rounded-full ${item.bg} mr-4 shrink-0`}
                       >
-                          {item.emoji}
+                          <img src={`${item.emoji}`} alt="" className="size-15"/>
                       </div>
                       <p className="text-gray-800 font-medium text-md">{item.text}</p>
                       </div>

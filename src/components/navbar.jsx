@@ -31,14 +31,14 @@ export default function Navbar() {
 
         {/* Login / Registration Popup */}
         {showLogin && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white rounded-lg shadow-lg p-8 w-96 relative">
+          <div className="fixed inset-0 flex items-center justify-center bg-opacity-90 backdrop-blur-sm">
+            <div className="bg-white rounded-lg shadow-lg p-8 h-150 w-150 relative">
               <button onClick={() => setShowLogin(false)} className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
                 <FaTimes className="size-5" />
               </button>
               {isRegistering ? (
                 <>
-                  <h2 className="text-2xl font-bold text-purple-700 mb-4">Sign Up</h2>
+                  <h2 className="text-5xl font-bold text-purple-700 mb-4">Sign Up</h2>
                   <p className="text-gray-600 mb-4">Create your account</p>
                   <input type="text" placeholder="Full Name" className="w-full p-2 mb-3 border rounded-md" />
                   <input type="number" placeholder="Age" className="w-full p-2 mb-3 border rounded-md" />
@@ -51,7 +51,7 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
-                  <h2 className="text-5xl font-bold text-purple-700 mb-4">Welcome!</h2>
+                  <h2 className="text-5xl font-bold text-purple-700 mt-30">Welcome!</h2>
                   <p className="text-gray-600 mb-4">Please login to your account</p>
                   <input type="text" placeholder="Paitent ID" className="w-full p-2 mb-3 border rounded-md" />
                   <input type="password" placeholder="Password" className="w-full p-2 mb-3 border rounded-md" />
