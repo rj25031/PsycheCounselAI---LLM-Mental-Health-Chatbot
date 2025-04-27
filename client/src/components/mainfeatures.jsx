@@ -3,32 +3,32 @@ import React from "react";
 export function MainFeatures(){
   const features = [
     {
-      icon: "⏱️",
+      image: "/src/assets/Stopwatch.svg",
       bg: "bg-yellow-100",
       text: "Track your mood in just seconds",
     },
     {
-      icon: "🎤",
+      image: "/src/assets/Microphone.svg",
       bg: "bg-red-100",
       text: "Add voice memos on the go",
     },
     {
-      icon: "🏆",
+      image: "/src/assets/Trophy.svg",
       bg: "bg-cyan-100",
       text: "Set achievable routines easily",
     },
     {
-      icon: "🎬",
+      image: "/src/assets/Clapper Board.svg",
       bg: "bg-green-100",
       text: "Add video memos on the go",
     },
     {
-      icon: "🧘‍♂️",
+      image: "/src/assets/Yoga.svg",
       bg: "bg-green-100",
       text: "Learn breathing techniques to combat stress",
     },
     {
-      icon: "🙌",
+      image: "/src/assets/Raise.svg",
       bg: "bg-purple-100",
       text: "Get support based on your data",
     },
@@ -54,7 +54,7 @@ export function MainFeatures(){
             <div
               className={`size-24 flex items-center justify-center text-4xl rounded-full ${item.bg}`}
             >
-              {item.icon}
+              <img src={`${item.image}`} alt="" srcset="" className="size-12" />
             </div>
             <p className="text-gray-800 text-xl font-medium">{item.text}</p>
           </div>

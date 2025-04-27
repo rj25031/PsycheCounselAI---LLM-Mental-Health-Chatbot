@@ -4,6 +4,7 @@ import {Home} from './pages/home.jsx'
 import ChatApp from './pages/chatapp.jsx'
 import StressQuestions from './pages/stressquestions.jsx';
 import Technology from './pages/technology.jsx';
+import About from './pages/About.jsx';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           <Route path='/chat' element={<ChatApp/>}/>
           <Route path='/stressquestions' element={<StressQuestions/>}/>
           <Route path='/tech' element={<Technology/>}></Route>
+          <Route path='/about' element={<About/>}></Route>
       </Routes>
     </Router>
   )
