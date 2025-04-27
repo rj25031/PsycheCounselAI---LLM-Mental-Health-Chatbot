@@ -8,7 +8,7 @@ import {
   FaPlay,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-
+import speakText from "../helper/speak";
 // Check if browser supports SpeechRecognition
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -51,6 +51,7 @@ export default function ChatApp() {
           ...prev,
           { text: data.response, sender: "bot" },
         ]);
+        speakText(data.response);
       }
     } catch (error) {
       console.error("Error sending message:", error);
@@ -61,6 +62,7 @@ export default function ChatApp() {
         ...prev,
         { text: "Oops, something went wrong.", sender: "bot" },
       ]);
+     await speakText("Oops, something went wrong.");
     }
   };
 
