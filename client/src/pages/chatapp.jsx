@@ -223,9 +223,9 @@ export default function ChatApp() {
           {/* Profile + Dropdown */}
           <div className="relative md:mr-20">
             <img
-              src="/src/assets/profile-pic.png"
+              src="/src/assets/Profile.jpg"
               alt="Profile"
-              className="w-12 h-12 rounded-full cursor-pointer border-2 border-purple-400 hover:border-purple-600 transition-all duration-200"
+              className="size-18 rounded-full cursor-pointer border-2 border-purple-400 hover:border-purple-600 transition-all duration-200"
               onClick={() => setDropdownOpen(!dropdownOpen)}
             />
 
