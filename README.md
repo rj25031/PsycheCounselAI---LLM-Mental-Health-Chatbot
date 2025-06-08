@@ -73,8 +73,8 @@ VITE_API_URL=https://your-ngrok-url.ngrok-free.app
 
 Add screenshots of the chatbot UI and notebook outputs here._
 
-![Home UI](/homess.png)
-![Chat UI](/chatss.png)
+![Home UI](/client/public/homess.png)
+![Chat UI](/client/public/chatss.png)
 
 ---
 
