@@ -6,7 +6,9 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/auth.js';
 import therapyRoutes from './routes/therapy.js';
 import morgan from 'morgan';
+import dotenv from 'dotenv';
 const app = express();
+dotenv.config()
 app.use(helmet());
 app.use(cors());
 app.use(morgan('dev'));
