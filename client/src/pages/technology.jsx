@@ -8,37 +8,37 @@ import ReactLenis from 'lenis/react';
 
 const dataPoints = [
     {
-      emoji: "/src/assets/Megaphone.svg",
+      emoji: "/Megaphone.svg",
       bg: "bg-yellow-100",
       text: "Audio, video and text memo's and typing behavior when users describe their day, their mood and anxiety levels.",
     },
     {
-      emoji: "/src/assets/Friends.svg",
+      emoji: "/Friends.svg",
       bg: "bg-green-100",
       text: "Context information such as work, friends, exercise that led to how users are feeling.",
     },
     {
-      emoji: "/src/assets/Trophy.svg",
+      emoji: "/Trophy.svg",
       bg: "bg-cyan-100",
       text: "Tasks performed by the user which go toward achieving their goals (e.g. sleeping more than 7 hrs).",
     },
     {
-      emoji: "/src/assets/Clipboard.svg",
+      emoji: "/Clipboard.svg",
       bg: "bg-indigo-100",
       text: "Symptoms that are of clinical use in diagnosis of mental health issues. For example a user may record a symptom like “Nervousness” or “Constantly worrying” which correspond to clinical assessment questions in forms like Generalized Anxiety Disorder 7.",
     },
     {
-      emoji: "/src/assets/Sleepy.svg",
+      emoji: "/Sleepy.svg",
       bg: "bg-green-100",
       text: "Sleep duration",
     },
     {
-      emoji: "/src/assets/Rose.svg",
+      emoji: "/Rose.svg",
       bg: "bg-red-100",
       text: "Menstrual cycle",
     },
     {
-      emoji: "/src/assets/Swimming.svg",
+      emoji: "/Swimming.svg",
       bg: "bg-indigo-100",
       text: "Exercises",
     },
@@ -132,7 +132,7 @@ export default function Technology() {
 
                   {/* Right Side is a Full Image */}
                   <div className="flex justify-center ml-30">
-                      <img src="/src/assets/collab.png" alt="Model Image" srcset="" className="rounded-3xl"/>
+                      <img src="/collab.png" alt="Model Image" srcset="" className="rounded-3xl"/>
                   </div>
               </div>
           </section>

@@ -18,7 +18,7 @@ export default function StressChecker() {
       {/* Image Section */}
       <div className="flex flex-col items-center ml-20 mr-20">
         <img
-          src="/src/assets/brain.png"
+          src="/brain.png"
           alt="Brain character"
           className="size-70"
         />

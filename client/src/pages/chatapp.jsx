@@ -160,7 +160,7 @@ export default function ChatApp() {
         <div className="flex items-center justify-center gap-2 mt-4">
           <NavLink to="/">
             <img
-              src="/src/assets/B Logo.svg"
+              src="/B Logo.svg"
               alt="Logo"
               className="w-120 md:w-80"
             />
@@ -210,7 +210,7 @@ export default function ChatApp() {
           {/* Simba Center (mobile) */}
           <div className="flex-1 flex justify-center md:justify-start">
             <div className="flex items-center gap-2">
-              <img src="/src/assets/AI Logo.png" alt="Logo" className="w-16" />
+              <img src="/AI Logo.png" alt="Logo" className="w-16" />
               <div>
                 <h3 className="text-lg font-semibold text-center">Simba</h3>
                 <p className="text-sm font-semibold text-green-600 text-center">
@@ -223,7 +223,7 @@ export default function ChatApp() {
           {/* Profile + Dropdown */}
           <div className="relative md:mr-20">
             <img
-              src="/src/assets/Profile.jpg"
+              src="/Profile.jpg"
               alt="Profile"
               className="size-18 rounded-full cursor-pointer border-2 border-purple-400 hover:border-purple-600 transition-all duration-200"
               onClick={() => setDropdownOpen(!dropdownOpen)}

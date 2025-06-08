@@ -21,7 +21,7 @@ function About() {
         <p className='text-xl'>Together, we combined technology, empathy, and innovation to create PsycheCounselAI — a transformative AI-powered mental health platform that offers real-time, personalized support while upholding privacy, accessibility, and ethical AI principles.</p>
       </div>
       <div>
-        <img src="/src/assets/Our Team.png" alt="" className='w-125'/>
+        <img src="/Our Team.png" alt="" className='w-125'/>
       </div>
 
     </div>

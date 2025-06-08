@@ -36,7 +36,7 @@ const TestimonialSection = () => {
           >
             <div className="flex items-center gap-3">
               <div className="size-20 bg-yellow-200 rounded-full flex items-center justify-center">
-                <img src="/src/assets/Men.svg" alt="" srcset="" className="size-12" />
+                <img src="/Men.svg" alt="" srcset="" className="size-12" />
               </div>
               <p className="font-medium text-xl text-[#1D1D1F]">{testimonial.username}</p>
               <div className="ml-auto text-3xl text-yellow-400 flex gap-1">

@@ -7,7 +7,7 @@ import React from "react";
       description:
         "Understand your emotional health in real time and receive suggestions to improve.",
       bg: "bg-pink-100",
-      image: "/src/assets/mock1.png", // Replace with actual image paths
+      image: "/mock1.png", // Replace with actual image paths
     },
     {
       id: 2,
@@ -15,7 +15,7 @@ import React from "react";
       description:
         "Interact with your AI therapist of choice for real time support based on your input",
       bg: "bg-yellow-100",
-      image: "/src/assets/mock2.png",
+      image: "/mock2.png",
     },
     {
       id: 3,
@@ -23,7 +23,7 @@ import React from "react";
       description:
         "Learn to focus on recovery, find calm and become your healthiest self",
       bg: "bg-indigo-100",
-      image: "/src/assets/MOCK3.png",
+      image: "/MOCK3.png",
     },
   ];
 

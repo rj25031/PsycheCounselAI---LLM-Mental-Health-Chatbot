@@ -6,7 +6,7 @@ const PrivacySection = () => {
       {/* Left Side - Mobile UI Image */}
       <div className="w-full max-w-sm mb-10 lg:mb-0">
         <img
-          src="/src/assets/privacy.png"
+          src="/privacy.png"
           alt="Mobile UI Mockup"
           className="rounded-3xl shadow-lg"
         />

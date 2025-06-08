@@ -19,7 +19,7 @@ export default function HeroSection() {
         {/* Right Image and Button Section */}
         <div className="flex flex-col items-center mt-8 md:mt-0">
           <img
-            src="/src/assets/lion.png" 
+            src="/lion.png" 
             alt="Panda AI Therapist"
             className="w-80"
           />

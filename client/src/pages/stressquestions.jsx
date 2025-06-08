@@ -158,7 +158,7 @@ function StressQuestions(){
       {/* Navbar */}
       <div className="bg-white p-4 gap-350 h-25 rounded-b-full flex items-center shadow">
         <div className="flex items-center gap-2 font-bold text-xl text-gray-800 ml-30">
-            <NavLink to='/'><img src="/src/assets/B Logo.svg" alt="Logo" className="w-70" /></NavLink>
+            <NavLink to='/'><img src="/B Logo.svg" alt="Logo" className="w-70" /></NavLink>
         </div>
         <div className="flex items-center gap-2">
           <img src="https://i.pravatar.cc/40" alt="user" className="rounded-full size-16" />
@@ -208,7 +208,7 @@ function StressQuestions(){
                 </li>
               ))}
             </ol>
-            <img src="/src/assets/sunflower.png" alt="flower" className="w-55 mx-auto mt-6" />
+            <img src="/sunflower.png" alt="flower" className="w-55 mx-auto mt-6" />
           </div>
 
           {/* Right: Questions Box */}

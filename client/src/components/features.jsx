@@ -8,7 +8,7 @@ export default function Features() {
           "Talk to Simba",
         ],
         bgColor: "bg-yellow-200",
-        photosrc: "/src/assets/Wink.png"
+        photosrc: "/Wink.png"
       },
       {
         title: "Effortless",
@@ -18,7 +18,7 @@ export default function Features() {
           "Intuitive UX",
         ],
         bgColor: "bg-green-200",
-        photosrc: "/src/assets/Smile.png"
+        photosrc: "/Smile.png"
       },
       {
         title: "Radically private",
@@ -28,7 +28,7 @@ export default function Features() {
           "No Ads, Only AI Therapy",
         ],
         bgColor: "bg-blue-200",
-        photosrc: "/src/assets/Hey.png"
+        photosrc: "/Hey.png"
       },
     ];
   

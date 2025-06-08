@@ -3,32 +3,32 @@ import React from "react";
 export function MainFeatures(){
   const features = [
     {
-      image: "/src/assets/Stopwatch.svg",
+      image: "/Stopwatch.svg",
       bg: "bg-yellow-100",
       text: "Track your mood in just seconds",
     },
     {
-      image: "/src/assets/Microphone.svg",
+      image: "/Microphone.svg",
       bg: "bg-red-100",
       text: "Add voice memos on the go",
     },
     {
-      image: "/src/assets/Trophy.svg",
+      image: "/Trophy.svg",
       bg: "bg-cyan-100",
       text: "Set achievable routines easily",
     },
     {
-      image: "/src/assets/Clapper Board.svg",
+      image: "/Clapper Board.svg",
       bg: "bg-green-100",
       text: "Add video memos on the go",
     },
     {
-      image: "/src/assets/Yoga.svg",
+      image: "/Yoga.svg",
       bg: "bg-green-100",
       text: "Learn breathing techniques to combat stress",
     },
     {
-      image: "/src/assets/Raise.svg",
+      image: "/Raise.svg",
       bg: "bg-purple-100",
       text: "Get support based on your data",
     },

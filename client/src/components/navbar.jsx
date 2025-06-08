@@ -39,7 +39,7 @@ export default function Navbar() {
         <nav className="flex items-center justify-between bg-cream p-4 md:p-6">
           {/* Logo Section */}
           <div className="flex items-center gap-2">
-            <NavLink to='/'><img src="/src/assets/B Logo.svg" alt="Logo" className="w-70"/></NavLink>
+            <NavLink to='/'><img src="/B Logo.svg" alt="Logo" className="w-70"/></NavLink>
           </div>
           {/* Navigation Links */}
           <div className="hidden md:flex gap-10 text-gray-700 text-lg font-medium">
