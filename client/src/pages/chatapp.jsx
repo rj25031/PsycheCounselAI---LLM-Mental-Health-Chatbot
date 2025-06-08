@@ -61,7 +61,7 @@ export default function ChatApp() {
 
     try {
       const response = await fetch(
-        "https://4b83-34-16-166-87.ngrok-free.app/chat",
+        process.env.VITE_API_URL,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
